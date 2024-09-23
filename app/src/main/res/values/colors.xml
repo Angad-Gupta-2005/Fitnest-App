@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+<!--    adding the color   -->
+    <color name="malibu">#92A3FD</color>
+    <color name="anakiwa">#9DCEFF</color>
+    <color name="perfume">#C58BF2</color>
+    <color name="kobi">#EEA4CE</color>
+
+<!--    Gray color  -->
+    <color name="dark_gray">#7B6F72</color>
+    <color name="light_gray">#ADA4A5</color>
+    <color name="lighter_gray">#DDDADA</color>
+    <color name="Border_color">#F7F8F8</color>
+</resources>
