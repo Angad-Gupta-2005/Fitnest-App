@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navgraph"
+    app:startDestination="@id/splash1Fragment">
+
+    <fragment
+        android:id="@+id/splash1Fragment"
+        android:name="com.angad.fitnestx.onboarding.Splash1Fragment"
+        android:label="fragment_splash1"
+        tools:layout="@layout/fragment_splash1" >
+        <action
+            android:id="@+id/action_splash1Fragment_to_splash2Fragment"
+            app:destination="@id/splash2Fragment"
+            app:enterAnim="@anim/from_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/splash2Fragment"
+        android:name="com.angad.fitnestx.onboarding.Splash2Fragment"
+        android:label="fragment_splash2"
+        tools:layout="@layout/fragment_splash2" />
+</navigation>
