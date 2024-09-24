@@ -7,27 +7,26 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.angad.fitnestx.R
-import com.angad.fitnestx.databinding.FragmentSplash2Binding
+import com.angad.fitnestx.databinding.FragmentSplashEatBinding
 
+class SplashEatFragment : Fragment() {
 
-class Splash2Fragment : Fragment() {
-
-    private lateinit var binding: FragmentSplash2Binding
+    private lateinit var binding: FragmentSplashEatBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        binding = FragmentSplash2Binding.inflate(layoutInflater)
+        binding = FragmentSplashEatBinding.inflate(layoutInflater)
 
-        onGetStartedButtonClick()
+        onNextButtonClick()
         return binding.root
     }
 
-    private fun onGetStartedButtonClick() {
-        binding.btnGetStarted.setOnClickListener {
-            findNavController().navigate(R.id.action_splash2Fragment_to_splashTrackFragment)
+    private fun onNextButtonClick() {
+        binding.btnSplash3.setOnClickListener {
+            findNavController().navigate(R.id.action_splashEatFragment_to_splashSleepFragment)
         }
     }
 

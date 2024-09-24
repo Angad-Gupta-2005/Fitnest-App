@@ -6,4 +6,15 @@
     <string name="fitnest">Fitnest</string>
     <string name="x">X</string>
     <string name="getstarted">GetStarted</string>
+    <string name="splash_track_txt">Don\'t worry if you have trouble determining your goals, we can help you determine your goals and track your goals.</string>
+    <string name="nextbtn">nextBtn</string>
+    <string name="girlimage">girlImage</string>
+    <string name="splash_head_txt">Track Your Goals</string>
+    <string name="back_vector">background_vector</string>
+    <string name="get_burn">Get Burn</string>
+    <string name="get_burn_txt">Let\'s keep burning to achive yours goals, it hurts only temporarily, if you give up now you will be in pain forever.</string>
+    <string name="eat_well">Eat Well</string>
+    <string name="eat_well_txt">Let\'s start a healthy lifestyle with us, we can determine your diet every day, healthy eating is fun.</string>
+    <string name="sleep_quality">Improve Sleep Quality</string>
+    <string name="sleep_quality_txt">Improve the quality of your sleep with us, good quality sleep can bring a good mood ini the morning.</string>
 </resources>

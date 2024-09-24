@@ -15,9 +15,58 @@
             app:destination="@id/splash2Fragment"
             app:enterAnim="@anim/from_right" />
     </fragment>
+
     <fragment
         android:id="@+id/splash2Fragment"
         android:name="com.angad.fitnestx.onboarding.Splash2Fragment"
         android:label="fragment_splash2"
-        tools:layout="@layout/fragment_splash2" />
+        tools:layout="@layout/fragment_splash2" >
+        <action
+            android:id="@+id/action_splash2Fragment_to_splashTrackFragment"
+            app:destination="@id/splashTrackFragment"
+            app:enterAnim="@anim/from_right" />
+    </fragment>
+
+<!--    Splash Track Fragment Start Here   -->
+    <fragment
+        android:id="@+id/splashTrackFragment"
+        android:name="com.angad.fitnestx.onboarding.SplashTrackFragment"
+        android:label="fragment_splash_track"
+        tools:layout="@layout/fragment_splash_track" >
+        <action
+            android:id="@+id/action_splashTrackFragment_to_splashBurnFragment4"
+            app:destination="@id/splashBurnFragment4"
+            app:enterAnim="@anim/from_right" />
+    </fragment>
+
+<!--    Splash Burn Fragment Start Here   -->
+    <fragment
+        android:id="@+id/splashBurnFragment4"
+        android:name="com.angad.fitnestx.onboarding.SplashBurnFragment"
+        android:label="fragment_splash_burn"
+        tools:layout="@layout/fragment_splash_burn" >
+        <action
+            android:id="@+id/action_splashBurnFragment4_to_splashEatFragment"
+            app:destination="@id/splashEatFragment"
+            app:enterAnim="@anim/from_right" />
+    </fragment>
+
+<!--    Splash Eat Fragment Start Here  -->
+    <fragment
+        android:id="@+id/splashEatFragment"
+        android:name="com.angad.fitnestx.onboarding.SplashEatFragment"
+        android:label="fragment_splash_eat"
+        tools:layout="@layout/fragment_splash_eat" >
+        <action
+            android:id="@+id/action_splashEatFragment_to_splashSleepFragment"
+            app:destination="@id/splashSleepFragment"
+            app:enterAnim="@anim/from_right" />
+    </fragment>
+
+<!--    Splash Sleep Fragment Start Here  -->
+    <fragment
+        android:id="@+id/splashSleepFragment"
+        android:name="com.angad.fitnestx.onboarding.SplashSleepFragment"
+        android:label="fragment_splash_sleep"
+        tools:layout="@layout/fragment_splash_sleep" />
 </navigation>
