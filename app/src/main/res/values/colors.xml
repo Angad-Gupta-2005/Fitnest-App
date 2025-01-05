@@ -14,4 +14,6 @@
     <color name="light_gray">#ADA4A5</color>
     <color name="lighter_gray">#DDDADA</color>
     <color name="Border_color">#F7F8F8</color>
+
+    <color name="blue">#0851D0</color>
 </resources>
