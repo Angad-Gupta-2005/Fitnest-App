@@ -53,7 +53,10 @@ class RegisterFragment : Fragment() {
             val password = binding.etPassword.text.toString()
 
             if (firstName.isEmpty() || lastName.isEmpty() || email.isEmpty() || password.isEmpty()) {
-                Toast.makeText( context, "Please Fill All Details", Toast.LENGTH_SHORT).show()
+                Utils.apply {
+                    hideDialog()
+                    Toast.makeText(context, "Please fill all details...", Toast.LENGTH_SHORT).show()
+                }
             } else{
             //    Creating an instance of user class which available in models package
                 val user = User_detail(firstName = firstName, lastName = lastName, email = email, password = password)

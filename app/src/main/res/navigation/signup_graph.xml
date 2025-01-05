@@ -48,11 +48,11 @@
         android:label="fragment_lose_fat"
         tools:layout="@layout/fragment_lose_fat" >
         <action
-            android:id="@+id/action_loseFatFragment_to_welcomeBackFragment"
-            app:destination="@id/welcomeBackFragment" />
+            android:id="@+id/action_loseFatFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
     <fragment
-        android:id="@+id/welcomeBackFragment"
+        android:id="@+id/loginFragment"
         android:name="com.angad.fitnestx.signup_and_login.LoginFragment"
         android:label="fragment_welcome_back"
         tools:layout="@layout/fragment_login" >
