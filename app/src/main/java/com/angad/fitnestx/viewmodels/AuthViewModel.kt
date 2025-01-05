@@ -14,6 +14,10 @@ import kotlinx.coroutines.flow.StateFlow
 class AuthViewModel: ViewModel() {
 
 
+    //    functionality to check user is register or not
+    private val _isUserRegisterSuccessfully = MutableStateFlow(false)
+    val isUserRegisterSuccessfully  = _isUserRegisterSuccessfully
+
     //    functionality after the user signIn successfully
     private val _isSignedInSuccessfully = MutableStateFlow(false)
     val isSignedInSuccessfully = _isSignedInSuccessfully
@@ -24,7 +28,7 @@ class AuthViewModel: ViewModel() {
     var isDataSaved: StateFlow<Boolean> = _isDataSaved
 
 //    Function that create user using email and password
-    fun singInWithEmailAndPassword(user: User_detail) {
+    fun createUserWithEmailAndPassword(user: User_detail) {
         Utils.getAuthInstance().createUserWithEmailAndPassword(user.email, user.password)
             .addOnCompleteListener { task ->
                 user.uid = Utils.getCurrentUserId()
@@ -38,9 +42,22 @@ class AuthViewModel: ViewModel() {
                             Log.e("Unsuccessful", "signInWithPhoneAuthCredential: ${e.message}" )
                         }
                     // Sign in success, update UI with the signed-in user's information
+                    _isUserRegisterSuccessfully.value = true
+                } else{
+                    // Registration failed, display a message and update the UI
+                }
+            }
+    }
+
+//    Function that signIn user with email and password
+    fun signInUserWithEmailAndPassword(email: String, password: String){
+        Utils.getAuthInstance().signInWithEmailAndPassword(email, password)
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful){
+                //    Updating the state
                     _isSignedInSuccessfully.value = true
                 } else{
-                    // Sign in failed, display a message and update the UI
+                    //  Sign in failed, display a message and update the UI
                 }
             }
     }
@@ -49,7 +66,7 @@ class AuthViewModel: ViewModel() {
 
     //    Getting the current user
         personalDetails.uid = Utils.getCurrentUserId()
-        //    Creating a node for adding all product
+    //    Creating a node for adding all product
         FirebaseDatabase.getInstance("https://blinkit-clone-f610a-default-rtdb.asia-southeast1.firebasedatabase.app")
             .getReference("FitnestUser").child("UserPersonal").child(personalDetails.uid!!).setValue(personalDetails)
             .addOnSuccessListener {

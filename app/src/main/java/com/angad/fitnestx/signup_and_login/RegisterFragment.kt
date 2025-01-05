@@ -29,7 +29,7 @@ class RegisterFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
     //    Initialised the binding
         binding = FragmentRegisterBinding.inflate(layoutInflater)
@@ -37,8 +37,16 @@ class RegisterFragment : Fragment() {
     //    On click register button, create a new user
         onClickRegisterButton()
 
+    //    On click login text go to the loginScreen
+        onClickLoginText()
 
         return binding.root
+    }
+
+    private fun onClickLoginText() {
+        binding.loginTxt.setOnClickListener {
+            findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
+        }
     }
 
     private fun onClickRegisterButton() {
@@ -60,10 +68,10 @@ class RegisterFragment : Fragment() {
             } else{
             //    Creating an instance of user class which available in models package
                 val user = User_detail(firstName = firstName, lastName = lastName, email = email, password = password)
-                viewModel.singInWithEmailAndPassword(user)
+                viewModel.createUserWithEmailAndPassword(user)
 
                 lifecycleScope.launch {
-                    viewModel.isSignedInSuccessfully.collect{
+                    viewModel.isUserRegisterSuccessfully.collect{
                         if (it){
                         //    Hide the dialog
                             Utils.hideDialog()

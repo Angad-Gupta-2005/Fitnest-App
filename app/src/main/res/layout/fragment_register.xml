@@ -237,6 +237,7 @@
                     android:text="@string/account_txt"/>
 
                 <TextView
+                    android:id="@+id/loginTxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18sp"
