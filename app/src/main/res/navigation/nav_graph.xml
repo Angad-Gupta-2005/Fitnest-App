@@ -13,7 +13,9 @@
         <action
             android:id="@+id/action_splash1Fragment_to_splash2Fragment"
             app:destination="@id/splash2Fragment"
-            app:enterAnim="@anim/from_right" />
+            app:enterAnim="@anim/from_right"
+            app:popUpTo="@id/splash1Fragment"
+            app:popUpToInclusive="true"/>
     </fragment>
 
     <fragment
@@ -24,7 +26,8 @@
         <action
             android:id="@+id/action_splash2Fragment_to_splashTrackFragment"
             app:destination="@id/splashTrackFragment"
-            app:enterAnim="@anim/from_right" />
+            app:enterAnim="@anim/from_right"
+            app:popUpToInclusive="true" />
     </fragment>
 
 <!--    Splash Track Fragment Start Here   -->
@@ -36,7 +39,8 @@
         <action
             android:id="@+id/action_splashTrackFragment_to_splashBurnFragment4"
             app:destination="@id/splashBurnFragment4"
-            app:enterAnim="@anim/from_right" />
+            app:enterAnim="@anim/from_right"
+            app:popUpToInclusive="true" />
     </fragment>
 
 <!--    Splash Burn Fragment Start Here   -->
@@ -48,7 +52,8 @@
         <action
             android:id="@+id/action_splashBurnFragment4_to_splashEatFragment"
             app:destination="@id/splashEatFragment"
-            app:enterAnim="@anim/from_right" />
+            app:enterAnim="@anim/from_right"
+            app:popUpToInclusive="true" />
     </fragment>
 
 <!--    Splash Eat Fragment Start Here  -->
@@ -60,7 +65,8 @@
         <action
             android:id="@+id/action_splashEatFragment_to_splashSleepFragment"
             app:destination="@id/splashSleepFragment"
-            app:enterAnim="@anim/from_right" />
+            app:enterAnim="@anim/from_right"
+            app:popUpToInclusive="true" />
     </fragment>
 
 <!--    Splash Sleep Fragment Start Here  -->

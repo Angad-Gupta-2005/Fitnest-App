@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/signup_graph"
+    app:startDestination="@id/registerFragment">
+
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.angad.fitnestx.signup_and_login.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_registerFragment_to_profileInputFragment"
+            app:destination="@id/profileInputFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileInputFragment"
+        android:name="com.angad.fitnestx.signup_and_login.ProfileInputFragment"
+        android:label="fragment_profile_input"
+        tools:layout="@layout/fragment_profile_input" >
+        <action
+            android:id="@+id/action_profileInputFragment_to_improveShapeFragment"
+            app:destination="@id/improveShapeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/improveShapeFragment"
+        android:name="com.angad.fitnestx.signup_and_login.ImproveShapeFragment"
+        android:label="fragment_improve_shape"
+        tools:layout="@layout/fragment_improve_shape" >
+        <action
+            android:id="@+id/action_improveShapeFragment_to_leanToneFragment"
+            app:destination="@id/leanToneFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/leanToneFragment"
+        android:name="com.angad.fitnestx.signup_and_login.LeanToneFragment"
+        android:label="fragment_lean_tone"
+        tools:layout="@layout/fragment_lean_tone" >
+        <action
+            android:id="@+id/action_leanToneFragment_to_loseFatFragment"
+            app:destination="@id/loseFatFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loseFatFragment"
+        android:name="com.angad.fitnestx.signup_and_login.LoseFatFragment"
+        android:label="fragment_lose_fat"
+        tools:layout="@layout/fragment_lose_fat" >
+        <action
+            android:id="@+id/action_loseFatFragment_to_welcomeBackFragment"
+            app:destination="@id/welcomeBackFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/welcomeBackFragment"
+        android:name="com.angad.fitnestx.signup_and_login.LoginFragment"
+        android:label="fragment_welcome_back"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_welcomeBackFragment_to_welcomeFragment"
+            app:destination="@id/welcomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.angad.fitnestx.signup_and_login.WelcomeFragment"
+        android:label="fragment_welcome"
+        tools:layout="@layout/fragment_welcome" />
+</navigation>

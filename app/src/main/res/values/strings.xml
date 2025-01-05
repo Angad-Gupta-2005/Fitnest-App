@@ -17,4 +17,17 @@
     <string name="eat_well_txt">Let\'s start a healthy lifestyle with us, we can determine your diet every day, healthy eating is fun.</string>
     <string name="sleep_quality">Improve Sleep Quality</string>
     <string name="sleep_quality_txt">Improve the quality of your sleep with us, good quality sleep can bring a good mood ini the morning.</string>
+    <string name="privacy_policy">By continuing you accept our Privacy Policy and Term of Use.</string>
+    <string name="registerBtn">Register</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="last_name">Last Name</string>
+    <string name="first_name">First Name</string>
+    <string name="create_an_account">Create an Account</string>
+    <string name="hey_there">Hey there,</string>
+    <string name="or">Or</string>
+    <string name="google_icon">google icon</string>
+    <string name="facebook_icon">facebook icon</string>
+    <string name="account_txt">Already have an account?</string>
+    <string name="login_txt">Login</string>
 </resources>
