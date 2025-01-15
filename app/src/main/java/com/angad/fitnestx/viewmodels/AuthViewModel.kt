@@ -37,6 +37,16 @@ class AuthViewModel(private val repository: UserRepository): ViewModel() {
     private val _isDataSaved = MutableStateFlow(false)
     var isDataSaved: StateFlow<Boolean> = _isDataSaved
 
+    //    For getting the current user
+    private val _isCurrentUser = MutableStateFlow(false)
+    val isCurrentUser = _isCurrentUser
+
+    init {
+        Utils.getAuthInstance().let {
+            _isCurrentUser.value = true
+        }
+    }
+
 //    Function that create user using email and password
     fun createUserWithEmailAndPassword(user: User_detail) {
         Utils.getAuthInstance().createUserWithEmailAndPassword(user.email, user.password)
