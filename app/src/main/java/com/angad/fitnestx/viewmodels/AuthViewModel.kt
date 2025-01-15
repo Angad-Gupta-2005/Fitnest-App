@@ -3,15 +3,25 @@ package com.angad.fitnestx.viewmodels
 import android.content.Intent
 import android.util.Log
 import android.widget.Toast
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.angad.fitnestx.models.PersonalDetails
 import com.angad.fitnestx.models.User_detail
 import com.angad.fitnestx.objects.Utils
+import com.angad.fitnestx.repository.UserRepository
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 
-class AuthViewModel: ViewModel() {
+class AuthViewModel(private val repository: UserRepository): ViewModel() {
+
+    //    Stateflow for user name
+   private val _userName = MutableLiveData<String>()
+    val userName: LiveData<String> get() = _userName
 
 
     //    functionality to check user is register or not
@@ -73,4 +83,14 @@ class AuthViewModel: ViewModel() {
                 _isDataSaved.value = true
             }
     }
+
+//    Function that load the user name
+    fun loadUserName(){
+    //    Getting the currentUser uid
+        val userId = Utils.getAuthInstance().currentUser?.uid.toString()
+        repository.fetchUserName(userId).observeForever { name ->
+            _userName.value = name
+        }
+    }
+
 }

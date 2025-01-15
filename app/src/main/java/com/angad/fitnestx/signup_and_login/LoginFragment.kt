@@ -6,14 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.angad.fitnestx.R
 import com.angad.fitnestx.databinding.FragmentLoginBinding
 import com.angad.fitnestx.objects.Utils
+import com.angad.fitnestx.repository.UserRepository
 import com.angad.fitnestx.viewmodels.AuthViewModel
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 class LoginFragment : Fragment() {
@@ -22,7 +21,7 @@ class LoginFragment : Fragment() {
     private lateinit var binding: FragmentLoginBinding
 
 //    Initialised the viewModel
-    private val viewModel: AuthViewModel by viewModels()
+    private val viewModel = AuthViewModel(UserRepository())
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,11 +31,19 @@ class LoginFragment : Fragment() {
     //    Initialised the binding
         binding = FragmentLoginBinding.inflate(layoutInflater)
 
+    //    Calling the function that perform the functionality to login the user
         onClickLoginButton()
 
-
+    //    Calling the function that perform the functionality to goto the register screen on click register text
+        onClickRegisterText()
 
         return binding.root
+    }
+
+    private fun onClickRegisterText() {
+        binding.registerTxt.setOnClickListener {
+            findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
+        }
     }
 
     private fun onClickLoginButton() {
@@ -62,6 +69,9 @@ class LoginFragment : Fragment() {
                         if (it){
                             Utils.hideDialog()
                             findNavController().navigate(R.id.action_loginFragment_to_welcomeFragment)
+                        }
+                        else{
+                            Utils.hideDialog()
                         }
                     }
                 }

@@ -30,4 +30,17 @@
     <string name="facebook_icon">facebook icon</string>
     <string name="account_txt">Already have an account?</string>
     <string name="login_txt">Login</string>
+    <string name="state">State</string>
+    <string name="banner_image">BannerImage</string>
+    <string name="complete_profile">Let\'s complete your profile</string>
+    <string name="about_you">It will help us to know more about you!</string>
+    <string name="choose_gender">Choose Gender</string>
+    <string name="date_of_birth">Date of Birth</string>
+    <string name="weight">Your Weight in KG</string>
+    <string name="height">Your Height in CM</string>
+    <string name="next">Next</string>
+    <string name="welcome_back">Welcome Back</string>
+    <string name="forgot_your_password">Forgot your password?</string>
+    <string name="don_t_have_an_account_yet">Don\'t have an account yet?</string>
+    <string name="go_to_home">Go To Home</string>
 </resources>

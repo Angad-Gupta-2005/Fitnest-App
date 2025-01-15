@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
+    android:layout_marginHorizontal="5dp"
     tools:context=".signup_and_login.RegisterFragment">
 
         <LinearLayout
@@ -31,6 +32,7 @@
 
         <!--    First Name Input Field  -->
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/etFirstNameLayout"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -49,6 +51,8 @@
                     android:drawableStart="@drawable/ic_profile"
                     android:drawablePadding="10dp"
                     android:maxLines="1"
+                    android:maxLength="15"
+                    android:singleLine="true"
                     android:hint="@string/first_name"
                     android:textSize="18sp"/>
 
@@ -56,6 +60,7 @@
 
         <!--    Last Name Input Field   -->
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/etLastNameLayout"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -75,12 +80,15 @@
                     android:drawablePadding="10dp"
                     android:hint="@string/last_name"
                     android:textSize="18sp"
-                    android:maxLines="1"/>
+                    android:maxLines="1"
+                    android:maxLength="15"
+                    android:singleLine="true"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
         <!--    Email Input Field   -->
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/etEmailLayout"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -101,12 +109,15 @@
                     android:hint="@string/email"
                     android:inputType="textEmailAddress"
                     android:textSize="18sp"
-                    android:maxLines="1"/>
+                    android:maxLines="1"
+                    android:maxLength="40"
+                    android:singleLine="true"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
         <!--    Password Input Field    -->
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/etPasswordLayout"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -130,7 +141,8 @@
                     android:inputType="textPassword"
                     android:maxLength="10"
                     android:textSize="18sp"
-                    android:maxLines="1"/>
+                    android:maxLines="1"
+                    android:singleLine="true"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -148,8 +160,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/privacy_policy"
-                    android:textSize="18sp"
-                    android:textColor="@color/dark_gray"/>
+                    android:textSize="18sp" />
 
             </LinearLayout>
 

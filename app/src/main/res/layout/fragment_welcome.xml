@@ -30,6 +30,7 @@
         app:layout_constraintVertical_bias="0.19">
 
         <TextView
+            android:id="@+id/userName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -58,7 +59,7 @@
         android:insetTop="0dp"
         android:insetBottom="0dp"
         android:paddingVertical="15dp"
-        android:text="Go To Home"
+        android:text="@string/go_to_home"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
