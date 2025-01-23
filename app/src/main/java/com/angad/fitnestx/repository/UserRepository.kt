@@ -9,7 +9,7 @@ import com.google.firebase.database.ValueEventListener
 
 class UserRepository {
 
-    val db = FirebaseDatabase.getInstance("https://blinkit-clone-f610a-default-rtdb.asia-southeast1.firebasedatabase.app")
+    private val db = FirebaseDatabase.getInstance("https://blinkit-clone-f610a-default-rtdb.asia-southeast1.firebasedatabase.app")
         .getReference("FitnestUser")
 
     //    Function that fetch the user name from the firebase and show into the screen
@@ -31,4 +31,29 @@ class UserRepository {
             })
         return userNameLiveData
     }
+
+//    Function that fetch user weight and height
+    fun fetchUserWeightAndHeight(userId: String): MutableLiveData<Pair<Float?, Float?>> {
+        val userWeightAndHeight = MutableLiveData<Pair<Float?, Float?>>()
+
+        db.child("UserPersonal").child(userId)
+            .addListenerForSingleValueEvent(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    val weight = snapshot.child("weight").getValue(Float::class.java)
+                    val height = snapshot.child("height").getValue(Float::class.java)
+
+                    // Post the fetched values as a pair
+                    userWeightAndHeight.value = Pair(weight, height)
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+                    // Handle errors here if needed
+                    userWeightAndHeight.value = Pair(null, null) // Set to null on error
+                }
+            })
+
+        return userWeightAndHeight
+    }
+
+
 }

@@ -74,8 +74,8 @@ class ProfileInputFragment : Fragment(),View.OnClickListener, View.OnFocusChange
                 val personalDetail = PersonalDetails(
                     gender = gender,
                     dob = dob,
-                    weight = weight,
-                    height = height.toInt()
+                    weight = weight.toFloat(),
+                    height = height.toFloat()
                 )
 
             //    Save the data into the firebase database

@@ -23,13 +23,18 @@ object Utils {
     }
 
     //    Creating an instance of firebaseAuth and databaseReference
-    private var auth: FirebaseAuth? = null
+//    private var auth: FirebaseAuth? = null
+//    fun getAuthInstance(): FirebaseAuth {
+//        if (auth == null){
+//            auth = FirebaseAuth.getInstance()
+//        }
+//        return auth!!
+//    }
+
     fun getAuthInstance(): FirebaseAuth {
-        if (auth == null){
-            auth = FirebaseAuth.getInstance()
-        }
-        return auth!!
+        return FirebaseAuth.getInstance()
     }
+
 
     //    For current user uid
     fun getCurrentUserId(): String? {
